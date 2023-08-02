@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  line-height: 0;
+}
+
+body {
+  text-decoration-color: black ;
+  margin: 0 auto;
+  width: 1440px;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* HEADER */
+
+.header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #0C0C0E; 
+}
+
+.header-logo {
+  color: #FFF;
+  text-align: right;
+  font-family: Forum;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  margin: 0px 454px 0px 0px;
+}
+
+.header-nav {
+ margin-right: 40px;
+}
+
+.header-nav-list {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.header-nav-link {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  font-family: 'Inter', sans-serif;
+  display: inline-block;    
+  position: relative;
+}
+
+.header-nav-link:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.header-nav-link::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  right: 0;
+  position: absolute;
+  background: #FFF;
+  transition: width .5s ease 0s, right .5s ease 0s;
+  width: 0;
+}
+
+.active::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  right: 0;
+  position: absolute;
+  background: #FFF;
+  transition: width .5s ease 0s, right .5s ease 0s;
+  width: 100%;
+  right: 0;
+}
+
+.icon-profile {
+  transition: 0.5s;
+}
+
+.icon-profile:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.burger-menu {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+     
+    body {
+        width: 768px;
+    }
+
+    .container {
+        max-width: 768px;
+    }
+
+    .header-logo {
+        margin-right: 280px;
+        width: 294px;
+        height: 50px;
+        text-align: left;
+    }
+
+    .header-icon-profile {
+        margin-right: 40px;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    /* BURGER */
+
+    .burger-menu {
+        display: block;
+    }
+
+/* 
+    гамбургер через спан */
+
+      .burg {
+        padding: 10px 20px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+    
+      .bar {
+        display: block;
+        width: 45px;
+        height: 2px;
+        background-color: #fff;
+        transition: 0.2s;
+        
+
+      }
+      .burg.open .bar:nth-child(2) {
+        opacity: 0;
+      }
+    
+      .burg.open .bar:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+      }
+    
+      .burg.open .bar:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+
+
+
+
+
+    .header-nav-list2 {
+        display: none;
+        position: fixed;
+        right: -100%;
+        flex-direction: column;
+        position: absolute;
+        z-index: 10;
+        background-color: black;
+        width: 332px;
+        height: 480px;
+        top: 90px;
+        gap: 30px;
+        align-items: center;
+        padding: 37px 107px 100px 107px;
+        transition: 0.6s;
+    }
+
+    .burger-menu.open{
+
+    }
+
+    .header-nav-list2.open {
+        display: flex;
+        position: fixed;
+        right: 0%;
+        overflow-x: hidden; 
+    }
+
+    .burg.open {
+    
+    }
+
+    .open {
+
+    }
+}
