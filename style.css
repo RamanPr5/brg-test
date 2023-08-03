@@ -132,10 +132,25 @@ ul {
 
 
 @media (max-width: 768px) {
-     
+  /* html{
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+} */
+
+  body
+  {
+    width: 768px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+
+/* 
     body {
         width: 768px;
-    }
+    } */
 
     .container {
         max-width: 768px;
@@ -200,10 +215,12 @@ ul {
 
     .header-nav-list2 {
         display: none;
+        /* position: fixed; */
+        /* right: -100%; */
+        display: flex;
         position: fixed;
-        right: -100%;
         flex-direction: column;
-        position: absolute;
+
         z-index: 10;
         background-color: black;
         width: 332px;
@@ -212,7 +229,10 @@ ul {
         gap: 30px;
         align-items: center;
         padding: 37px 107px 100px 107px;
-        transition: 0.6s;
+        transition: transform 0.6s;
+        transform: translateX(105px);
+        /* visibility: hidden; */
+        overflow-x: hidden; 
     }
 
     .burger-menu.open{
@@ -220,10 +240,13 @@ ul {
     }
 
     .header-nav-list2.open {
-        display: flex;
-        position: fixed;
-        right: 0%;
-        overflow-x: hidden; 
+
+        /* right: 0%; */
+    
+        /* visibility: visible; */
+        /* display: flex; */
+        transform: translateX(-227px);
+
     }
 
     .burg.open {
